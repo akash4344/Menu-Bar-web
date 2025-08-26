@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f8f8;
+}
+
+/* Navbar Container */
+nav {
+  background: #2c3e50;
+  color: white;
+  padding: 0.8rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: #f1c40f;
+}
+
+/* Menu Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #f1c40f;
+}
+
+/* Dropdown */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  background: #34495e;
+  list-style: none;
+  min-width: 170px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 0.7rem 1rem;
+  color: white;
+}
+
+.dropdown li a:hover {
+  background: #f1c40f;
+  color: #2c3e50;
+}
+
+.nav-links li:hover .dropdown {
+  display: block;
+}
+
+/* Book Now Button */
+.book-btn {
+  background: #f1c40f;
+  color: #2c3e50 !important;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.book-btn:hover {
+  background: #fff200;
+  color: #2c3e50;
+}
+
+/* Mobile Toggle */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #2c3e50;
+    flex-direction: column;
+    width: 220px;
+    padding: 1rem;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
